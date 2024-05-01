@@ -56,3 +56,6 @@ def split_data(source_folder, train_size=0.8, val_size=0.1, test_size=0.1):
         for image in test_images:
             shutil.copy(image, os.path.join(source_folder, 'test', cls))
 
+
+dataset_path = "data"
+split_data(dataset_path)
