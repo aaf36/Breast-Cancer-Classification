@@ -1,29 +1,38 @@
+import os
 import shutil
 import cv2
 import numpy as np
-import os
 
 
 def process_images(folder_path, label, target_size=(256, 256)):
     images = []
     labels = []
-    label_dict = {'bottle': 1, 'basket': 2, 'food': 3, 'cup': 4, 'jar': 5, 'can': 6, 'dish': 7, 'mug': 8,
-                  'glass': 9}  # Define a dictionary to map labels to numeric values
-    label_code = label_dict[label]
-    label_path = os.path.join(folder_path, label)
+    label_dict = {'bottle': 1, 'basket': 2, 'food': 3, 'cup': 4, 'jar': 5, 'can': 6, 'dish': 7, 'mug': 8, 'glass': 9}
+    label_code = label_dict.get(label)  # Safely get the label code
+
+    if label_code is None:
+        print(f"Label '{label}' not found in label dictionary.")
+        return None, None
+
+    label_path = os.path.join(folder_path, str(label_code))  # Correct directory path
+
+    if not os.path.exists(label_path):
+        print(f"Directory not found: {label_path}")
+        return None, None
+
     for img_name in os.listdir(label_path):
-        img_path = os.path.join(label_path, img_name)
-        # load the image
-        img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)  # Read the image in grayscale
-        # resize the image
-        img_resized = cv2.resize(img, target_size)  # Resize the image to the specified target size
-        # preprocess the resized image (e.g., normalize pixel values)
-        img_resized = img_resized.astype('float32') / 255.0  # Normalize pixel values to [0, 1]
-        # flatten the resized image
-        img_flat = img_resized.flatten()
-        # append the flattened image and corresponding label
-        images.append(img_flat)
-        labels.append(label_code)
+        if img_name.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.gif')):  # Check for image files
+            img_path = os.path.join(label_path, img_name)
+            img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+            if img is None:
+                print(f"Failed to load image from {img_path}")
+                continue
+            img_resized = cv2.resize(img, target_size)
+            img_resized = img_resized.astype('float32') / 255.0
+            img_flat = img_resized.flatten()
+            images.append(img_flat)
+            labels.append(label_code)
+
     return np.array(images), np.array(labels)
 
 
@@ -57,5 +66,63 @@ def split_data(source_folder, train_size=0.8, val_size=0.1, test_size=0.1):
             shutil.copy(image, os.path.join(source_folder, 'test', cls))
 
 
-dataset_path = "data"
-split_data(dataset_path)
+# processing images from each sub folder in the train, validation, and testing directories
+train_bottle_images, train_bottle_labels = process_images("train", 'bottle')
+train_basket_images, train_basket_labels = process_images('train', 'basket')
+train_food_images, train_food_labels = process_images('train', 'food')
+train_cup_images, train_cup_labels = process_images('train', 'cup')
+train_jar_images, train_jar_labels = process_images('train', 'jar')
+train_can_images, train_can_labels = process_images('train', 'can')
+train_dish_images, train_dish_labels = process_images('train', 'dish')
+train_mug_images, train_mug_labels = process_images('train', 'mug')
+train_glass_images, train_glass_labels = process_images('train', 'glass')
+
+val_bottle_images, val_bottle_labels = process_images("val", 'bottle')
+val_basket_images, val_basket_labels = process_images('val', 'basket')
+val_food_images, val_food_labels = process_images('val', 'food')
+val_cup_images, val_cup_labels = process_images('val', 'cup')
+val_jar_images, val_jar_labels = process_images('val', 'jar')
+val_can_images, val_can_labels = process_images('val', 'can')
+val_dish_images, val_dish_labels = process_images('val', 'dish')
+val_mug_images, val_mug_labels = process_images('val', 'mug')
+val_glass_images, val_glass_labels = process_images('val', 'glass')
+
+test_bottle_images, test_bottle_labels = process_images("test", 'bottle')
+test_basket_images, test_basket_labels = process_images('test', 'basket')
+test_food_images, test_food_labels = process_images('test', 'food')
+test_cup_images, test_cup_labels = process_images('test', 'cup')
+test_jar_images, test_jar_labels = process_images('test', 'jar')
+test_can_images, test_can_labels = process_images('test', 'can')
+test_dish_images, test_dish_labels = process_images('test', 'dish')
+test_mug_images, test_mug_labels = process_images('test', 'mug')
+test_glass_images, test_glass_labels = process_images('test', 'glass')
+
+# add processed images from each class into one numpy array for each dataset
+
+train_images = np.concatenate(
+    (train_bottle_images, train_basket_images, train_food_images, train_cup_images,
+     train_jar_images, train_can_images, train_dish_images, train_mug_images, train_glass_images),
+    axis=0)
+train_labels = np.concatenate(
+    (train_bottle_labels, train_basket_labels, train_food_labels, train_cup_labels,
+     train_jar_labels, train_can_labels, train_dish_labels, train_mug_labels, train_glass_labels),
+    axis=0)
+
+val_images = np.concatenate(
+    (val_bottle_images, val_basket_images, val_food_images, val_cup_images,
+     val_jar_images, val_can_images, val_dish_images, val_mug_images, val_glass_images),
+    axis=0)
+val_labels = np.concatenate(
+    (val_bottle_labels, val_basket_labels, val_food_labels, val_cup_labels,
+     val_jar_labels, val_can_labels, val_dish_labels, val_mug_labels, val_glass_labels),
+    axis=0)
+
+test_images = np.concatenate(
+    (test_bottle_images, test_basket_images, test_food_images, test_cup_images,
+     test_jar_images, test_can_images, test_dish_images, test_mug_images, test_glass_images),
+    axis=0)
+test_labels = np.concatenate(
+    (test_bottle_labels, test_basket_labels, test_food_labels, test_cup_labels,
+     test_jar_labels, test_can_labels, test_dish_labels, test_mug_labels, test_glass_labels),
+    axis=0)
+
