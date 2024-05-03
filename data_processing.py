@@ -97,6 +97,7 @@ test_dish_images, test_dish_labels = process_images('test', 'dish')
 test_mug_images, test_mug_labels = process_images('test', 'mug')
 test_glass_images, test_glass_labels = process_images('test', 'glass')
 
+
 # add processed images from each class into one numpy array for each dataset
 
 train_images = np.concatenate(
@@ -125,4 +126,6 @@ test_labels = np.concatenate(
     (test_bottle_labels, test_basket_labels, test_food_labels, test_cup_labels,
      test_jar_labels, test_can_labels, test_dish_labels, test_mug_labels, test_glass_labels),
     axis=0)
+
+
 
