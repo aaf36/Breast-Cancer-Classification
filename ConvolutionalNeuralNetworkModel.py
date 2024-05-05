@@ -29,3 +29,4 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 
 # Fit the model
 model.fit(train_images, train_labels, epochs=20, batch_size=64, validation_data=(val_images, val_labels))
+
