@@ -1,0 +1,54 @@
+Found 4102 images belonging to 9 classes.
+Found 509 images belonging to 9 classes.
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.0, neurons: 256, layers: 1
+Validation accuracy:  0.8722985982894897
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.0, neurons: 256, layers: 3
+Validation accuracy:  0.8722985982894897
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.0, neurons: 384, layers: 1
+Validation accuracy:  0.8742632865905762
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.0, neurons: 384, layers: 3
+Validation accuracy:  0.8683693408966064
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.2, neurons: 256, layers: 1
+Validation accuracy:  0.8644400835037231
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.2, neurons: 256, layers: 3
+Validation accuracy:  0.8546168804168701
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.2, neurons: 384, layers: 1
+Validation accuracy:  0.8683693408966064
+
+Testing model with batch size: 64, learning rate: 0.001, dropout rate: 0.2, neurons: 384, layers: 3
+Validation accuracy:  0.8644400835037231
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.0, neurons: 256, layers: 1
+Validation accuracy:  0.8624754548072815
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.0, neurons: 256, layers: 3
+Validation accuracy:  0.8664047122001648
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.0, neurons: 384, layers: 1
+Validation accuracy:  0.8722985982894897
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.0, neurons: 384, layers: 3
+Validation accuracy:  0.8487229943275452
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.2, neurons: 256, layers: 1
+Validation accuracy:  0.8467583656311035
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.2, neurons: 256, layers: 3
+Validation accuracy:  0.8526522517204285
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.2, neurons: 384, layers: 1
+Validation accuracy:  0.8526522517204285
+
+Testing model with batch size: 128, learning rate: 0.001, dropout rate: 0.2, neurons: 384, layers: 3
+Validation accuracy:  0.8683693408966064
+
+Best parameters:  {'batch_size': 64, 'learning_rate': 0.001, 'dropout_rate': 0.0, 'neurons': 384, 'layers': 1}
+Best validation accuracy: 0.8742632865905762
+Best parameters:  {'batch_size': 64, 'learning_rate': 0.001, 'dropout_rate': 0.0, 'neurons': 384, 'layers': 1}
+Best validation accuracy:  0.8742632865905762
