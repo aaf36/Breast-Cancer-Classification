@@ -57,11 +57,11 @@ def create_model(learning_rate=0.001, dropout_rate=0.0, neurons=512):
                   metrics=['accuracy'])
     return model
 
+learning_rates = [0.0005, 0.001, 0.0015]   # Adding 0.0015 for finer control
 batch_sizes = [64, 128]  # Focusing on larger batch sizes for efficiency
-learning_rates = [0.0005, 0.001, 0.0015, 0.002]  # Adding 0.0015 for finer control
 dropout_rates = [0.0, 0.2]  # Simplified to two options
 neurons_options = [256, 384]  # Concentrating on potentially optimal neuron counts
-layer_options = [1, 3]  # Reduced layer options to key configurations
+layer_options = [1, 3]
 
 best_score = 0
 best_params = {}
