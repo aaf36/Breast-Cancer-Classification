@@ -1,0 +1,82 @@
+Testing model with learning rate: 0.001, dropout rate: 0.0, neurons: 256
+Validation accuracy:  0.8821218013763428
+
+Testing model with learning rate: 0.001, dropout rate: 0.0, neurons: 512
+Validation accuracy:  0.8703339695930481
+
+Testing model with learning rate: 0.001, dropout rate: 0.0, neurons: 1024
+Validation accuracy:  0.8781925439834595
+
+Testing model with learning rate: 0.001, dropout rate: 0.25, neurons: 256
+Validation accuracy:  0.8624754548072815
+
+Testing model with learning rate: 0.001, dropout rate: 0.25, neurons: 512
+Validation accuracy:  0.8781925439834595
+
+Testing model with learning rate: 0.001, dropout rate: 0.25, neurons: 1024
+Validation accuracy:  0.8762279152870178
+
+Testing model with learning rate: 0.001, dropout rate: 0.5, neurons: 256
+Validation accuracy:  0.8644400835037231
+
+Testing model with learning rate: 0.001, dropout rate: 0.5, neurons: 512
+Validation accuracy:  0.8644400835037231
+
+Testing model with learning rate: 0.001, dropout rate: 0.5, neurons: 1024
+Validation accuracy:  0.8565815091133118
+
+Testing model with learning rate: 0.005, dropout rate: 0.0, neurons: 256
+Validation accuracy:  0.8683693408966064
+
+Testing model with learning rate: 0.005, dropout rate: 0.0, neurons: 512
+Validation accuracy:  0.8722985982894897
+
+Testing model with learning rate: 0.005, dropout rate: 0.0, neurons: 1024
+Validation accuracy:  0.8683693408966064
+
+Testing model with learning rate: 0.005, dropout rate: 0.25, neurons: 256
+Validation accuracy:  0.8388997912406921
+
+Testing model with learning rate: 0.005, dropout rate: 0.25, neurons: 512
+Validation accuracy:  0.8506876230239868
+
+Testing model with learning rate: 0.005, dropout rate: 0.25, neurons: 1024
+Validation accuracy:  0.8644400835037231
+
+Testing model with learning rate: 0.005, dropout rate: 0.5, neurons: 256
+Validation accuracy:  0.8231827020645142
+Testing model with learning rate: 0.005, dropout rate: 0.5, neurons: 512
+Validation accuracy:  0.8251473307609558
+
+Testing model with learning rate: 0.005, dropout rate: 0.5, neurons: 1024
+Validation accuracy:  0.8212180733680725
+
+Testing model with learning rate: 0.01, dropout rate: 0.0, neurons: 256
+Validation accuracy:  0.8546168804168701
+
+Testing model with learning rate: 0.01, dropout rate: 0.0, neurons: 512
+Validation accuracy:  0.8428290486335754
+
+Testing model with learning rate: 0.01, dropout rate: 0.0, neurons: 1024
+Validation accuracy:  0.8330059051513672
+
+Testing model with learning rate: 0.01, dropout rate: 0.25, neurons: 256
+Validation accuracy:  0.8310412764549255
+
+Testing model with learning rate: 0.01, dropout rate: 0.25, neurons: 512
+Validation accuracy:  0.8231827020645142
+
+Testing model with learning rate: 0.01, dropout rate: 0.25, neurons: 1024
+Validation accuracy:  0.8251473307609558
+
+Testing model with learning rate: 0.01, dropout rate: 0.5, neurons: 256
+Validation accuracy:  0.8074656128883362
+
+Testing model with learning rate: 0.01, dropout rate: 0.5, neurons: 512
+Validation accuracy:  0.8035363554954529
+
+Testing model with learning rate: 0.01, dropout rate: 0.5, neurons: 1024
+Validation accuracy:  0.7878192663192749
+################################################################################
+Best parameters:  {'learning_rate': 0.001, 'dropout_rate': 0.0, 'neurons': 256}
+Best validation accuracy:  0.8821218013763428
